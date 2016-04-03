@@ -1,0 +1,1 @@
+web: gunicorn commentsearch.wsgi --log-file -
