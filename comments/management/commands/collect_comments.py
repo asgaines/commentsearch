@@ -43,5 +43,4 @@ class Command(BaseCommand):
             except Exception as e:
                 raise CommandError('{0}, {1}'.format(e.message, e.args))
 
-        self.stdout.write(self.style.SUCCESS('Comments successfully collected to database'))
-            
+        self.stdout.write(self.style.SUCCESS('{0} comments successfully collected to database'.format(Comment.objects.count())))
