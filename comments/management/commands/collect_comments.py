@@ -13,6 +13,10 @@ class Command(BaseCommand):
         # Feed HTML from web page into parser
         soup = BeautifulSoup(requests.get(settings.REVIEW_ARTICLE_LINK).text, 'html.parser')
 
+        # Clear old comments
+        for comment in Comment.objects.all():
+            comment.delete()
+
         # Loop through all comments on page and feed into database
         for comment in soup.find_all(attrs={'class': 'comment'}):
             try:
