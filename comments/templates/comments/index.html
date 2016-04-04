@@ -16,7 +16,7 @@
 
     <div class="search-results">
         <h2>Results</h2>
-        {% ifequal method 'POST' %}
+        {% if success_submit %}
             <p>Number of matches: {{ comment_matches|length }}</p>
             <hr />
             {% for comment in comment_matches %}
@@ -29,7 +29,7 @@
             {% endfor %}
         {% else %}
             <p>Submit a search to see results</p>
-        {% endifequal %}
+        {% endif %}
     </div>
 
 {% endblock content %}
