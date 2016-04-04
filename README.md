@@ -10,11 +10,12 @@ Search through all comments posted to [this web page](http://www.dcrainmaker.com
 
 ## Cloning Project
 
-- Ensure python, git are installed locally
+- Ensure Python, git are installed locally
 - Install [heroku](https://www.heroku.com) and the accompanying toolbelt
 - Install [pip](https://pip.pypa.io/en/stable/installing/)
 - `cd` into directory of choice
 - Run `git clone https://github.com/asgaines/commentsearch.git my_directory`
+- Run `pip install -r requirements.txt` to install required Python packages
 - Login to heroku by running `heroku login`
 - Run `heroku create my_site_name`
 - Run `python manage.py collect_comments` to update the comments from the review website
