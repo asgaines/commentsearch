@@ -1,0 +1,34 @@
+{% extends 'comments/base.html' %}
+
+{% block content %}
+
+    <h2>Usage</h2>
+    
+    <p>
+        Enter a search term or multiple terms separated by commas into the text box below. Press submit to retrieve all comments from <a href="{{ link }}" target="blank">this review</a> which match the given search term or list of terms.
+    </p>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="search-terms" />
+        <input type="submit" />
+    </form>
+
+    <div class="search-results">
+        <h2>Results</h2>
+        {% ifequal method 'POST' %}
+            <p>Number of matches: {{ comment_matches|length }}</p>
+            {% for comment in comment_matches %}
+                <p>
+                    {{ comment.body }}
+                </p>  
+                <p>
+                    by {{ comment.author }}
+                <hr />
+            {% endfor %}
+        {% else %}
+            <p>Submit a search to see results</p>
+        {% endifequal %}
+    </div>
+
+{% endblock content %}
