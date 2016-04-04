@@ -18,6 +18,7 @@
         <h2>Results</h2>
         {% ifequal method 'POST' %}
             <p>Number of matches: {{ comment_matches|length }}</p>
+            <hr />
             {% for comment in comment_matches %}
                 <p>
                     {{ comment.body }}
