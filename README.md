@@ -1,43 +1,23 @@
-# Heroku Django Starter Template
+# CommentSearch
 
-An utterly fantastic project starter template for Django 1.9.
+Search through all comments posted to [this web page](http://www.dcrainmaker.com/2015/01/stryd-first-running.html) for search terms submitted through this site. Display the comments which matched at least one of the comma-delimited search terms.
 
-## Features
+## How to Use Site
 
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise
+- Access site [here](https://commentsearch.herokuapp.com)
+- Enter desired search terms, delimited by commas (e.g. `run`, `stryd, power`, `measure,meter`, etc)
+- Submit query and see the matching comments displayed on page
 
-## How to Use
+## Cloning Project
 
-To use this project, follow these steps:
+- Ensure python, git are installed locally
+- Install [heroku](https://www.heroku.com) and the accompanying toolbelt
+- Install [pip](https://pip.pypa.io/en/stable/installing/)
+- `cd` into directory of choice
+- Run `git clone https://github.com/asgaines/commentsearch.git my_directory`
+- Login to heroku by running `heroku login`
+- Run `heroku create my_site_name`
+- Run `python manage.py collect_comments` to update the comments from the review website
+- Run `heroku local` to view local state of application
+- Follow deployment steps to update production site at url returned by running `heroku create my_site_name`
 
-1. Create your working environment.
-2. Install Django (`$ pip install django`)
-3. Create a new project using this template
-
-## Creating Your Project
-
-Using this template to create a new Django app is easy::
-
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
-
-You can replace ``helloworld`` with your desired project name.
-
-## Deployment to Heroku
-
-    $ git init
-    $ git add -A
-    $ git commit -m "Initial commit"
-
-    $ heroku create
-    $ git push heroku master
-
-    $ heroku run python manage.py migrate
-
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
-
-## Further Reading
-
-- [Gunicorn](https://warehouse.python.org/project/gunicorn/)
-- [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
-- [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
