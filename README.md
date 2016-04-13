@@ -18,6 +18,7 @@ Search through all comments posted to [this web page](http://www.dcrainmaker.com
 - Run `pip install -r requirements.txt` to install required Python packages
 - Login to heroku by running `heroku login`
 - Run `heroku create my_site_name`
+- Run `python manage.py migrate` to create database tables
 - Run `python manage.py collect_comments` to update the comments from the review website
 - Run `heroku local` to view local state of application
 - Follow deployment steps to update production site at url returned by running `heroku create my_site_name`
